@@ -16,12 +16,12 @@ public class RoleMapper {
     public RoleDTO roleToRoleDTO(Role role){
         // Role entity'sini RoleDTO'ya dönüştürüyoruz
         RoleDTO roleDTO = modelMapper.map(role, RoleDTO.class);
+        return modelMapper.map(role, RoleDTO.class);
 
-        // users alanını dolduruyoruz
-        roleDTO.setUsers(role.getUsers().stream()
-                .map(this::user));
-        return roleDTO
+    }
 
-
+    public Role roleDTOToRole(RoleDTO roleDTO) {
+        // RoleDTO'yu Role entity'sine dönüştürüyoruz
+        return modelMapper.map(roleDTO, Role.class);
     }
 }

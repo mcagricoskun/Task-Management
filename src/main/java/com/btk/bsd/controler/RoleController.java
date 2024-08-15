@@ -27,7 +27,7 @@ public class RoleController {
             return new ResponseEntity<>(roleDTO, HttpStatus.OK);
         }
         else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND)
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
@@ -48,7 +48,7 @@ public class RoleController {
     // UPDATE
     @PutMapping("/update-role")
     public ResponseEntity<RoleDTO> updateRole(@RequestParam Long id, @RequestBody RoleDTO roleDTO){
-        RoleDTO updatedRole = roleService.updateRole(roleDTO);
+        RoleDTO updatedRole = roleService.updateRole(id, roleDTO);
         if (updatedRole != null){
             return new ResponseEntity<>(updatedRole, HttpStatus.OK);
         } else {

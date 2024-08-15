@@ -60,9 +60,12 @@ public class UserService {
 
     @CachePut(value = "user", key = "#result.id")
     public UserDTO createUser(UserDTO userDTO){
+        //userDTO yu user olarak al
         User user = userMapper.userDTOToUser(userDTO);
-        user = userRepository.save(user);
-        return userMapper.userToUserDTO(user);
+        //bu user ı kaydet ve saveUser a ata
+        User savedUser = userRepository.save(user);
+        //user ı userDTO ya çevir ve controller a gönder
+        return userMapper.userToUserDTO(savedUser);
     }
 
     // UPDATE
