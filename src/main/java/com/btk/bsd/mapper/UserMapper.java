@@ -24,7 +24,8 @@ public class UserMapper {
         // roleIds alanını dolduruyoruz
         userDTO.setRoleIds(user.getRoles().stream()
                 .map(Role::getId)
-                .collect(Collectors.toList()));
+                .collect(Collectors.toList())
+        );
 
         return userDTO;
     }

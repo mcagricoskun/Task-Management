@@ -1,4 +1,4 @@
-package com.btk.bsd.controler;
+package com.btk.bsd.controller;
 
 
 import com.btk.bsd.dto.RoleDTO;

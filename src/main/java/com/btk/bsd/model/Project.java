@@ -24,6 +24,4 @@ public class Project {
     private List<Task> tasks;
 
 
-
-
 }

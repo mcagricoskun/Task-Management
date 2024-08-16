@@ -2,6 +2,7 @@ package com.btk.bsd.dto;
 
 import lombok.Data;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 public class CommentDTO {
@@ -10,4 +11,5 @@ public class CommentDTO {
     private LocalDateTime createdAt;
     private Long taskId;
     private Long parentCommentId;
+    private List<Long> childCommentIds;
 }

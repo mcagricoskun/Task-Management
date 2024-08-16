@@ -40,9 +40,8 @@ public class UserService {
     // CachePut veri güncellenince önbelleği bu veri ile günceller
     @Cacheable(value = "user", key = "#id")
     public UserDTO getUserById (Long id){
-        return userRepository.findById(id)
-                .map(userMapper::userToUserDTO)
-                .orElse(null);
+        User user = userRepository.findById(id).orElse(null);
+        return userMapper.userToUserDTO(user);
     }
 
     // GET ALL

@@ -1,4 +1,4 @@
-package com.btk.bsd.controler;
+package com.btk.bsd.controller;
 
 import com.btk.bsd.dto.UserDTO;
 import com.btk.bsd.service.UserService;
@@ -31,7 +31,7 @@ public class UserController {
     @GetMapping("/get-users")
     public ResponseEntity<List<UserDTO>> getAllUsers(){
         List<UserDTO> userDto = userService.getAllUsers();
-    return new ResponseEntity<>(userDto, HttpStatus.OK);
+        return new ResponseEntity<>(userDto, HttpStatus.OK);
     }
 
     // CREATE

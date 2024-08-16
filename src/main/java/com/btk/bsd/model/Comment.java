@@ -19,7 +19,7 @@ public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String comment;
+    private String text;
 
     private LocalDateTime createdAt;
 
@@ -33,6 +33,8 @@ public class Comment {
 
     @OneToMany(mappedBy = "parentComment")
     private List<Comment> childComments;
+
+
 
     protected void onCreate(){
         createdAt = LocalDateTime.now();
