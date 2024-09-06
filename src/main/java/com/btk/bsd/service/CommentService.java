@@ -54,7 +54,7 @@ public class CommentService {
         Comment existingComment = commentRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Comment with ID " + id + " not found"));
 
-        existingComment.setComment(commentDTO.getText());
+        existingComment.setText(commentDTO.getText());
 
         if (commentDTO.getParentCommentId() != null) {
             Comment parentComment = commentRepository.findById(commentDTO.getParentCommentId())

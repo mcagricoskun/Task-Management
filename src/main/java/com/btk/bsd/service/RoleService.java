@@ -56,6 +56,7 @@ public class RoleService {
         if (existingRole != null){
             existingRole.setName(roleDTO.getName());
             existingRole.setUsers(roleMapper.roleDTOToRole(roleDTO).getUsers());
+            existingRole.setPermissions(roleMapper.roleDTOToRole(roleDTO).getPermissions());
 
             Role savedRole = roleRepository.save(existingRole);
             return roleMapper.roleToRoleDTO(savedRole);

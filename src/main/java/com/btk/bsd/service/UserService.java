@@ -77,7 +77,7 @@ public class UserService {
             user.setName(userDTO.getName());
             user.setEmail(userDTO.getEmail());
             user.setRoles(userDTO.getRoleIds().stream()
-                    .map(roleId -> new Role(roleId, null, null))
+                    .map(roleId -> new Role(roleId, null, null,null))
                     .collect(Collectors.toList()));
             user = userRepository.save(user);
             return userMapper.userToUserDTO(user);

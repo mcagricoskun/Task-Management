@@ -12,8 +12,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class CommentMapper {
 
-    @Autowired
-    private ModelMapper modelMapper;
+
+    private final ModelMapper modelMapper;
+
+    public CommentMapper() {
+        this.modelMapper = new ModelMapper();
+    }
 
     @Autowired
     private TaskRepository taskRepository;

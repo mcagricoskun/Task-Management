@@ -15,8 +15,7 @@ import java.util.stream.Collectors;
 @Component
 public class TaskMapper {
 
-    @Autowired
-    private ModelMapper modelMapper;
+    private final ModelMapper modelMapper;
 
     @Autowired
     private ProjectRepository projectRepository;
@@ -24,6 +23,10 @@ public class TaskMapper {
     @Autowired
     private CommentRepository commentRepository;
 
+
+    public TaskMapper() {
+        this.modelMapper = new ModelMapper();
+    }
     public TaskDTO taskToTaskDTO(Task task) {
         TaskDTO taskDTO = modelMapper.map(task, TaskDTO.class);
 

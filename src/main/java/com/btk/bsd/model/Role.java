@@ -18,7 +18,9 @@ public class Role {
     private Long id;
     private String name;
 
+
+
     @ManyToMany(mappedBy = "roles")
     private List<User> users;
-
+    private String permissions;
 }

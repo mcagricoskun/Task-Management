@@ -37,7 +37,7 @@ public class UserMapper {
         // roles alanını dolduruyoruz
         user.setRoles(userDTO.getRoleIds().stream()
                 .map(roleId -> {
-                    Role role = new Role();
+                    Role role = new Role(roleId, null, null,null);
                     role.setId(roleId);
                     return role;
                 })

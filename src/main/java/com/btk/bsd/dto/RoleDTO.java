@@ -9,5 +9,6 @@ public class RoleDTO {
     private Long id;
     private String name;
     private List<UserDTO> users;
+    private Object permissions;
 
 }

@@ -20,6 +20,7 @@ public class Project {
     private String name;
     private String master;
 
+
     @OneToMany(mappedBy = "project")
     private List<Task> tasks;
 

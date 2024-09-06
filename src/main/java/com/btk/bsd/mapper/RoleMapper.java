@@ -4,7 +4,9 @@ import com.btk.bsd.dto.RoleDTO;
 
 import com.btk.bsd.model.Role;
 import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RoleMapper {
 
     private final ModelMapper modelMapper;
